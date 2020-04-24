@@ -1,0 +1,17 @@
+{
+  "name": "post-collection-2-yaml",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paulo Ariel Pareja",
+  "license": "ISC",
+  "dependencies": {
+    "js-yaml": "^3.13.1"
+  },
+  "repository": {
+    "url": "https://github.com/Paulo-Ariel-Pareja/post-2-yaml"
+  }
+}

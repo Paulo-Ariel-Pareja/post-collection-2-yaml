@@ -1,7 +1,7 @@
 const yaml = require('js-yaml');
 const fs = require('fs');
 
-module.exports.converter = async(input, output) => {
+module.exports.converter = async(input, output, options ={}) => {
     const postmanRaw = require(input);
     const pathsOfPostman = postmanRaw.item;
     const paths = {}
@@ -196,21 +196,28 @@ module.exports.converter = async(input, output) => {
         console.log(`FIN ${originalMethod} - ${summary}`);
     
     });
-    
+
+    const url = options.url || 'localhost:8080';
+    const description = options.description || 'An description';
+    const descriptionInfo = options.descriptionInfo || 'Some description';
+    const version = options.version || '1.0.0';
+    const title = options.title || 'Post-collection-2-yaml';
+    const email = options.email || 'adndevelopersoftware@gmail.com';
+
     const data = {
         openapi: '3.0.0',
         servers: [
             {
-                url: 'https://payments-wallet-test.fif.tech/merchant/operations/bff',
-                description: 'Default server'
+                url,
+                description
             }
         ],
         info: {
-            description: 'BFF para operaciones',
-            version: '1.0.0',
-            title: 'bff-merchant-core-operations',
+            description: descriptionInfo,
+            version,
+            title,
             contact: {
-                email: 'falabella@falabella.com.ar'
+                email
             }
         },
         tags: [{ name: 'Default', description: 'tag default' }],

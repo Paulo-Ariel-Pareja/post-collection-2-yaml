@@ -3,12 +3,12 @@
 ### Install dependency
 
 ```
-npm i post-collection-2-yaml
+npm i post-collection-to-yaml
 ```
 ### Import and use
 
 ```
-const postToYaml = require('post-2-yaml');
+const postToYaml = require('post-collection-to-yaml');
 
 const stringInput = 'path/to/post-collection.json';
 const stringOutput = 'path/to/save.yaml';
@@ -21,21 +21,24 @@ Recive 2 params: a string of path and file from Postman Collection and a string 
 
 ### Personalize some params (Optional)
 ```
-const postToYaml = require('post-2-yaml');
+const postToYaml = require('post-collection-to-yaml');
 
 const stringInput = 'path/to/post-collection.json';
 const stringOutput = 'path/to/save.yaml';
 
 const options = {
-    url = 'localhost:8080',
-    description = 'An description',
-    title = 'Post-collection-2-yaml',
-    version = '1.0.0',
-    descriptionInfo = 'Some description',
-    email = 'adndevelopersoftware@gmail.com'
+    url: 'localhost:8080',
+    description: 'An description',
+    title: 'post-collection-to-yaml',
+    version: '1.0.0',
+    descriptionInfo: 'Some description',
+    email: 'adndevelopersoftware@gmail.com'
 }
 await postToYaml.convert(stringInput, stringOutput, options);
 
 ```
+
+### Example
+![](example.gif)
 ### Credits
 By Paulo Ariel Pareja

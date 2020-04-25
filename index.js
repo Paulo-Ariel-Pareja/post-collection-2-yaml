@@ -1,7 +1,7 @@
 const job = require('./converter');
 
-const convert = async (input, output) => {
-    job.converter(input, output)
+const convert = async (input, output, options) => {
+    job.converter(input, output, options)
 }
 
 module.exports = {

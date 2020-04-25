@@ -7,11 +7,21 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Paulo Ariel Pareja",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "js-yaml": "^3.13.1"
   },
   "repository": {
     "url": "https://github.com/Paulo-Ariel-Pareja/post-collection-2-yaml"
-  }
+  },
+  "keywords": [
+    "postman",
+    "2.1.0",
+    "collection",
+    "swagger",
+    "yaml",
+    "openapi",
+    "3.0.0",
+    "converter"
+  ]
 }

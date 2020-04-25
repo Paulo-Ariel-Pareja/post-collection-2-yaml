@@ -1,6 +1,6 @@
 {
-  "name": "post-collection-2-yaml",
-  "version": "1.0.1",
+  "name": "post-collection-to-yaml",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {

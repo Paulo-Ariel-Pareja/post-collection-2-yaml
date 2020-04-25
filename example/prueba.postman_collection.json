@@ -1,0 +1,494 @@
+{
+	"info": {
+		"_postman_id": "b338f94c-20ae-44ee-9a09-2cec974f6100",
+		"name": "magento copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtener ordenes completas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "rgu5kdpsl7hhovko8qycd26dlomgi99n",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://123.456.789.102/rest/V1/orders?searchCriteria[filter_groups][0][filters][0][field]=status&searchCriteria[filter_groups][0][filters][0][value]=processing&searchCriteria[filter_groups][1][filters][0][field]=state",
+					"protocol": "http",
+					"host": [
+						"123",
+						"456",
+						"789",
+						"102"
+					],
+					"path": [
+						"rest",
+						"V1",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "searchCriteria[filter_groups][0][filters][0][field]",
+							"value": "status"
+						},
+						{
+							"key": "searchCriteria[filter_groups][0][filters][0][value]",
+							"value": "processing"
+						},
+						{
+							"key": "searchCriteria[filter_groups][1][filters][0][field]",
+							"value": "state"
+						}
+					]
+				},
+				"description": "TIENEN EL PAGO APROBADO Y LA GUIA DE DESPACHO GENERADA"
+			},
+			"response": [
+				{
+					"name": "Obtener ordenes completas reponse",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://167.71.105.215/rest/V1/orders?searchCriteria[filter_groups][0][filters][0][field]=status&searchCriteria[filter_groups][0][filters][0][value]=processing&searchCriteria[filter_groups][1][filters][0][field]=state&searchCriteria[filter_groups][1][filters][0][value]=processing&searchCriteria[filter_groups][2][filters][0][field]=shipping_description&searchCriteria[filter_groups][2][filters][0][value]=Andreani%20Estandar%20-%20Recibí%20el%20pedido%20en%20tu%20casa.&searchCriteria[filter_groups][2][filters][0][condition_type]=neq",
+							"protocol": "http",
+							"host": [
+								"167",
+								"71",
+								"105",
+								"215"
+							],
+							"path": [
+								"rest",
+								"V1",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "searchCriteria[filter_groups][0][filters][0][field]",
+									"value": "status"
+								},
+								{
+									"key": "searchCriteria[filter_groups][0][filters][0][value]",
+									"value": "processing"
+								},
+								{
+									"key": "searchCriteria[filter_groups][1][filters][0][field]",
+									"value": "state"
+								},
+								{
+									"key": "searchCriteria[filter_groups][1][filters][0][value]",
+									"value": "processing"
+								},
+								{
+									"key": "searchCriteria[filter_groups][2][filters][0][field]",
+									"value": "shipping_description"
+								},
+								{
+									"key": "searchCriteria[filter_groups][2][filters][0][value]",
+									"value": "Andreani%20Estandar%20-%20Recibí%20el%20pedido%20en%20tu%20casa."
+								},
+								{
+									"key": "searchCriteria[filter_groups][2][filters][0][condition_type]",
+									"value": "neq"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 22 Apr 2020 21:47:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.29 (Ubuntu)"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "PHPSESSID=2nlvou4g2h4e5hl2435ebuhtf7; expires=Wed, 03-Jun-2020 13:47:07 GMT; Max-Age=3600000; path=/; domain=167.71.105.215; HttpOnly"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"items\": [\n        {\n            \"base_currency_code\": \"ARS\",\n            \"base_discount_amount\": 0,\n            \"base_discount_invoiced\": 0,\n            \"base_grand_total\": 3307.99,\n            \"base_discount_tax_compensation_amount\": 0,\n            \"base_discount_tax_compensation_invoiced\": 0,\n            \"base_shipping_amount\": 519.99,\n            \"base_shipping_discount_amount\": 0,\n            \"base_shipping_discount_tax_compensation_amnt\": 0,\n            \"base_shipping_incl_tax\": 519.99,\n            \"base_shipping_invoiced\": 519.99,\n            \"base_shipping_tax_amount\": 0,\n            \"base_subtotal\": 2788,\n            \"base_subtotal_incl_tax\": 2788,\n            \"base_subtotal_invoiced\": 2788,\n            \"base_tax_amount\": 0,\n            \"base_tax_invoiced\": 0,\n            \"base_total_due\": 0,\n            \"base_total_invoiced\": 3307.99,\n            \"base_total_invoiced_cost\": 0,\n            \"base_total_paid\": 3307.99,\n            \"base_to_global_rate\": 1,\n            \"base_to_order_rate\": 1,\n            \"billing_address_id\": 3206,\n            \"created_at\": \"2020-04-22 21:35:05\",\n            \"customer_email\": \"mariaemiliayantorno@gmail.com\",\n            \"customer_firstname\": \"Emilia\",\n            \"customer_group_id\": 0,\n            \"customer_is_guest\": 1,\n            \"customer_lastname\": \"Yantorno\",\n            \"customer_note_notify\": 1,\n            \"discount_amount\": 0,\n            \"discount_invoiced\": 0,\n            \"email_sent\": 1,\n            \"entity_id\": 1526,\n            \"global_currency_code\": \"ARS\",\n            \"grand_total\": 3307.99,\n            \"discount_tax_compensation_amount\": 0,\n            \"discount_tax_compensation_invoiced\": 0,\n            \"increment_id\": \"000019736\",\n            \"is_virtual\": 0,\n            \"order_currency_code\": \"ARS\",\n            \"protect_code\": \"d758b8ca2b1eb7a36963c7066668f578\",\n            \"quote_id\": 301237,\n            \"remote_ip\": \"198.41.231.185\",\n            \"shipping_amount\": 519.99,\n            \"shipping_description\": \"Andreani Estandar - Recibí el pedido en tu casa de 5 a 15 días hábiles (Debido al contexto, los despachos pueden demorar un poco más de lo habitual).\",\n            \"shipping_discount_amount\": 0,\n            \"shipping_discount_tax_compensation_amount\": 0,\n            \"shipping_incl_tax\": 519.99,\n            \"shipping_invoiced\": 519.99,\n            \"shipping_tax_amount\": 0,\n            \"state\": \"processing\",\n            \"status\": \"processing\",\n            \"store_currency_code\": \"ARS\",\n            \"store_id\": 1,\n            \"store_name\": \"Main Website\\nMain Website Store\\n\",\n            \"store_to_base_rate\": 0,\n            \"store_to_order_rate\": 0,\n            \"subtotal\": 2788,\n            \"subtotal_incl_tax\": 2788,\n            \"subtotal_invoiced\": 2788,\n            \"tax_amount\": 0,\n            \"tax_invoiced\": 0,\n            \"total_due\": 0,\n            \"total_invoiced\": 3307.99,\n            \"total_item_count\": 4,\n            \"total_paid\": 3307.99,\n            \"total_qty_ordered\": 4,\n            \"updated_at\": \"2020-04-22 21:35:05\",\n            \"weight\": 2.2,\n            \"x_forwarded_for\": \"190.188.215.12\",\n            \"items\": [\n                {\n                    \"amount_refunded\": 0,\n                    \"base_amount_refunded\": 0,\n                    \"base_discount_amount\": 0,\n                    \"base_discount_invoiced\": 0,\n                    \"base_discount_tax_compensation_amount\": 0,\n                    \"base_discount_tax_compensation_invoiced\": 0,\n                    \"base_original_price\": 790,\n                    \"base_price\": 790,\n                    \"base_price_incl_tax\": 790,\n                    \"base_row_invoiced\": 790,\n                    \"base_row_total\": 790,\n                    \"base_row_total_incl_tax\": 790,\n                    \"base_tax_amount\": 0,\n                    \"base_tax_invoiced\": 0,\n                    \"created_at\": \"2020-04-22 21:35:05\",\n                    \"discount_amount\": 0,\n                    \"discount_invoiced\": 0,\n                    \"discount_percent\": 0,\n                    \"free_shipping\": 0,\n                    \"discount_tax_compensation_amount\": 0,\n                    \"discount_tax_compensation_invoiced\": 0,\n                    \"is_qty_decimal\": 0,\n                    \"is_virtual\": 0,\n                    \"item_id\": 2414,\n                    \"name\": \"Fuente Muffins Cobre x6 Antiadherente\",\n                    \"no_discount\": 0,\n                    \"order_id\": 1526,\n                    \"original_price\": 790,\n                    \"price\": 790,\n                    \"price_incl_tax\": 790,\n                    \"product_id\": 1060,\n                    \"product_type\": \"simple\",\n                    \"qty_canceled\": 0,\n                    \"qty_invoiced\": 1,\n                    \"qty_ordered\": 1,\n                    \"qty_refunded\": 0,\n                    \"qty_shipped\": 0,\n                    \"quote_item_id\": 91500,\n                    \"row_invoiced\": 790,\n                    \"row_total\": 790,\n                    \"row_total_incl_tax\": 790,\n                    \"row_weight\": 0.4,\n                    \"sku\": \"3672922\",\n                    \"store_id\": 1,\n                    \"tax_amount\": 0,\n                    \"tax_invoiced\": 0,\n                    \"tax_percent\": 0,\n                    \"updated_at\": \"2020-04-22 21:35:05\",\n                    \"weee_tax_applied\": \"[]\",\n                    \"weight\": 0.4\n                },\n                {\n                    \"amount_refunded\": 0,\n                    \"base_amount_refunded\": 0,\n                    \"base_discount_amount\": 0,\n                    \"base_discount_invoiced\": 0,\n                    \"base_discount_tax_compensation_amount\": 0,\n                    \"base_discount_tax_compensation_invoiced\": 0,\n                    \"base_original_price\": 669,\n                    \"base_price\": 669,\n                    \"base_price_incl_tax\": 669,\n                    \"base_row_invoiced\": 669,\n                    \"base_row_total\": 669,\n                    \"base_row_total_incl_tax\": 669,\n                    \"base_tax_amount\": 0,\n                    \"base_tax_invoiced\": 0,\n                    \"created_at\": \"2020-04-22 21:35:05\",\n                    \"discount_amount\": 0,\n                    \"discount_invoiced\": 0,\n                    \"discount_percent\": 0,\n                    \"free_shipping\": 0,\n                    \"discount_tax_compensation_amount\": 0,\n                    \"discount_tax_compensation_invoiced\": 0,\n                    \"is_qty_decimal\": 0,\n                    \"is_virtual\": 0,\n                    \"item_id\": 2415,\n                    \"name\": \"Budinera Bronce Mediana Antiadherente\",\n                    \"no_discount\": 0,\n                    \"order_id\": 1526,\n                    \"original_price\": 669,\n                    \"price\": 669,\n                    \"price_incl_tax\": 669,\n                    \"product_id\": 1048,\n                    \"product_type\": \"simple\",\n                    \"qty_canceled\": 0,\n                    \"qty_invoiced\": 1,\n                    \"qty_ordered\": 1,\n                    \"qty_refunded\": 0,\n                    \"qty_shipped\": 0,\n                    \"quote_item_id\": 91501,\n                    \"row_invoiced\": 669,\n                    \"row_total\": 669,\n                    \"row_total_incl_tax\": 669,\n                    \"row_weight\": 0.5,\n                    \"sku\": \"3672892\",\n                    \"store_id\": 1,\n                    \"tax_amount\": 0,\n                    \"tax_invoiced\": 0,\n                    \"tax_percent\": 0,\n                    \"updated_at\": \"2020-04-22 21:35:05\",\n                    \"weee_tax_applied\": \"[]\",\n                    \"weight\": 0.5\n                },\n                {\n                    \"amount_refunded\": 0,\n                    \"base_amount_refunded\": 0,\n                    \"base_discount_amount\": 0,\n                    \"base_discount_invoiced\": 0,\n                    \"base_discount_tax_compensation_amount\": 0,\n                    \"base_discount_tax_compensation_invoiced\": 0,\n                    \"base_original_price\": 939,\n                    \"base_price\": 939,\n                    \"base_price_incl_tax\": 939,\n                    \"base_row_invoiced\": 939,\n                    \"base_row_total\": 939,\n                    \"base_row_total_incl_tax\": 939,\n                    \"base_tax_amount\": 0,\n                    \"base_tax_invoiced\": 0,\n                    \"created_at\": \"2020-04-22 21:35:05\",\n                    \"discount_amount\": 0,\n                    \"discount_invoiced\": 0,\n                    \"discount_percent\": 0,\n                    \"free_shipping\": 0,\n                    \"discount_tax_compensation_amount\": 0,\n                    \"discount_tax_compensation_invoiced\": 0,\n                    \"is_qty_decimal\": 0,\n                    \"is_virtual\": 0,\n                    \"item_id\": 2416,\n                    \"name\": \"Bowl Steel 2.5 lts\",\n                    \"no_discount\": 0,\n                    \"order_id\": 1526,\n                    \"original_price\": 939,\n                    \"price\": 939,\n                    \"price_incl_tax\": 939,\n                    \"product_id\": 230,\n                    \"product_type\": \"simple\",\n                    \"qty_canceled\": 0,\n                    \"qty_invoiced\": 1,\n                    \"qty_ordered\": 1,\n                    \"qty_refunded\": 0,\n                    \"qty_shipped\": 0,\n                    \"quote_item_id\": 91503,\n                    \"row_invoiced\": 939,\n                    \"row_total\": 939,\n                    \"row_total_incl_tax\": 939,\n                    \"row_weight\": 1,\n                    \"sku\": \"366098\",\n                    \"store_id\": 1,\n                    \"tax_amount\": 0,\n                    \"tax_invoiced\": 0,\n                    \"tax_percent\": 0,\n                    \"updated_at\": \"2020-04-22 21:35:05\",\n                    \"weee_tax_applied\": \"[]\",\n                    \"weight\": 1\n                },\n                {\n                    \"amount_refunded\": 0,\n                    \"base_amount_refunded\": 0,\n                    \"base_discount_amount\": 0,\n                    \"base_discount_invoiced\": 0,\n                    \"base_discount_tax_compensation_amount\": 0,\n                    \"base_discount_tax_compensation_invoiced\": 0,\n                    \"base_original_price\": 390,\n                    \"base_price\": 390,\n                    \"base_price_incl_tax\": 390,\n                    \"base_row_invoiced\": 390,\n                    \"base_row_total\": 390,\n                    \"base_row_total_incl_tax\": 390,\n                    \"base_tax_amount\": 0,\n                    \"base_tax_invoiced\": 0,\n                    \"created_at\": \"2020-04-22 21:35:05\",\n                    \"discount_amount\": 0,\n                    \"discount_invoiced\": 0,\n                    \"discount_percent\": 0,\n                    \"free_shipping\": 0,\n                    \"discount_tax_compensation_amount\": 0,\n                    \"discount_tax_compensation_invoiced\": 0,\n                    \"is_qty_decimal\": 0,\n                    \"is_virtual\": 0,\n                    \"item_id\": 2417,\n                    \"name\": \"Exprimidor con Colador\",\n                    \"no_discount\": 0,\n                    \"order_id\": 1526,\n                    \"original_price\": 390,\n                    \"price\": 390,\n                    \"price_incl_tax\": 390,\n                    \"product_id\": 928,\n                    \"product_type\": \"simple\",\n                    \"qty_canceled\": 0,\n                    \"qty_invoiced\": 1,\n                    \"qty_ordered\": 1,\n                    \"qty_refunded\": 0,\n                    \"qty_shipped\": 0,\n                    \"quote_item_id\": 91504,\n                    \"row_invoiced\": 390,\n                    \"row_total\": 390,\n                    \"row_total_incl_tax\": 390,\n                    \"row_weight\": 0.3,\n                    \"sku\": \"367205\",\n                    \"store_id\": 1,\n                    \"tax_amount\": 0,\n                    \"tax_invoiced\": 0,\n                    \"tax_percent\": 0,\n                    \"updated_at\": \"2020-04-22 21:35:05\",\n                    \"weee_tax_applied\": \"[]\",\n                    \"weight\": 0.3\n                }\n            ],\n            \"billing_address\": {\n                \"address_type\": \"billing\",\n                \"city\": \"La Plata\",\n                \"country_id\": \"AR\",\n                \"email\": \"mariaemiliayantorno@gmail.com\",\n                \"entity_id\": 3206,\n                \"firstname\": \"Emilia\",\n                \"lastname\": \"Yantorno\",\n                \"parent_id\": 1526,\n                \"postcode\": \"1900\",\n                \"region\": \"Buenos Aires\",\n                \"region_code\": \"AR-B\",\n                \"region_id\": 578,\n                \"street\": [\n                    \"60 entre 9 y 10\"\n                ],\n                \"telephone\": \"0221154590549\"\n            },\n            \"payment\": {\n                \"account_status\": null,\n                \"additional_information\": [\n                    \"mercadopago_custom\",\n                    \"9\",\n                    \"2024\",\n                    \"María Emil Yantorno\",\n                    \"DNI\",\n                    \"35611571\",\n                    \"6\",\n                    \"3307.99\",\n                    \"3307.99\",\n                    \"MLA\",\n                    \"6c2ae72c59d03642084bce7560e69c74\",\n                    \"visa\",\n                    \"-1\",\n                    \"\",\n                    \"-1\",\n                    \"\",\n                    \"credit_card\",\n                    \"9/2024\",\n                    \"visa\",\n                    \"María Emil Yantorno\",\n                    \"Tarjeta de crédito / débito\",\n                    \"{\\\"acquirer\\\":null,\\\"acquirer_reconciliation\\\":[],\\\"additional_info\\\":{\\\"available_balance\\\":null,\\\"items\\\":[{\\\"category_id\\\":\\\"others\\\",\\\"description\\\":\\\"Bowl Steel 2.5 lts\\\",\\\"id\\\":\\\"366098\\\",\\\"picture_url\\\":\\\"https:\\\\/\\\\/www.morph.com.ar\\\\/pub\\\\/static\\\\/version1581074478\\\\/webapi_rest\\\\/_view\\\\/es_AR\\\\/Magento_Catalog\\\\/images\\\\/product\\\\/placeholder\\\\/.jpg\\\",\\\"quantity\\\":\\\"1\\\",\\\"title\\\":\\\"Bowl Steel 2.5 lts\\\",\\\"unit_price\\\":\\\"939\\\"},{\\\"category_id\\\":\\\"others\\\",\\\"description\\\":\\\"Budinera Bronce Mediana Antiadherente\\\",\\\"id\\\":\\\"3672892\\\",\\\"picture_url\\\":\\\"https:\\\\/\\\\/www.morph.com.ar\\\\/pub\\\\/static\\\\/version1581074478\\\\/webapi_rest\\\\/_view\\\\/es_AR\\\\/Magento_Catalog\\\\/images\\\\/product\\\\/placeholder\\\\/.jpg\\\",\\\"quantity\\\":\\\"1\\\",\\\"title\\\":\\\"Budinera Bronce Mediana Antiadherente\\\",\\\"unit_price\\\":\\\"669\\\"},{\\\"category_id\\\":\\\"others\\\",\\\"description\\\":\\\"Fuente Muffins Cobre x6 Antiadherente\\\",\\\"id\\\":\\\"3672922\\\",\\\"picture_url\\\":\\\"https:\\\\/\\\\/www.morph.com.ar\\\\/pub\\\\/static\\\\/version1581074478\\\\/webapi_rest\\\\/_view\\\\/es_AR\\\\/Magento_Catalog\\\\/images\\\\/product\\\\/placeholder\\\\/.jpg\\\",\\\"quantity\\\":\\\"1\\\",\\\"title\\\":\\\"Fuente Muffins Cobre x6 Antiadherente\\\",\\\"unit_price\\\":\\\"790\\\"},{\\\"category_id\\\":\\\"others\\\",\\\"description\\\":\\\"Exprimidor con Colador\\\",\\\"id\\\":\\\"367205\\\",\\\"picture_url\\\":\\\"https:\\\\/\\\\/www.morph.com.ar\\\\/pub\\\\/static\\\\/version1581074478\\\\/webapi_rest\\\\/_view\\\\/es_AR\\\\/Magento_Catalog\\\\/images\\\\/product\\\\/placeholder\\\\/.jpg\\\",\\\"quantity\\\":\\\"1\\\",\\\"title\\\":\\\"Exprimidor con Colador\\\",\\\"unit_price\\\":\\\"390\\\"}],\\\"nsu_processadora\\\":null,\\\"payer\\\":{\\\"address\\\":{\\\"street_name\\\":\\\"60 entre 9 y 10 - La Plata - AR\\\",\\\"zip_code\\\":\\\"1900\\\"},\\\"first_name\\\":\\\"Emilia\\\",\\\"last_name\\\":\\\"Yantorno\\\",\\\"phone\\\":{\\\"area_code\\\":\\\"0\\\",\\\"number\\\":\\\"0221154590549\\\"},\\\"registration_date\\\":\\\"1970-01-01T00:00:00\\\"},\\\"shipments\\\":{\\\"receiver_address\\\":{\\\"apartment\\\":\\\"-\\\",\\\"floor\\\":\\\"-\\\",\\\"street_name\\\":\\\"60 entre 9 y 10 - La Plata - AR\\\",\\\"zip_code\\\":\\\"1900\\\"}}},\\\"authorization_code\\\":\\\"018985\\\",\\\"binary_mode\\\":false,\\\"call_for_authorize_id\\\":null,\\\"captured\\\":true,\\\"card\\\":{\\\"cardholder\\\":{\\\"identification\\\":{\\\"number\\\":\\\"35611571\\\",\\\"type\\\":\\\"DNI\\\"},\\\"name\\\":\\\"Maria Emil Yantorno\\\"},\\\"date_created\\\":\\\"2020-04-22T17:35:02.000-04:00\\\",\\\"date_last_updated\\\":\\\"2020-04-22T17:35:02.000-04:00\\\",\\\"expiration_month\\\":9,\\\"expiration_year\\\":2024,\\\"first_six_digits\\\":\\\"454846\\\",\\\"id\\\":null,\\\"last_four_digits\\\":\\\"3767\\\"},\\\"collector_id\\\":148976079,\\\"corporation_id\\\":null,\\\"counter_currency\\\":null,\\\"coupon_amount\\\":0,\\\"currency_id\\\":\\\"ARS\\\",\\\"date_approved\\\":\\\"2020-04-22T17:35:03.000-04:00\\\",\\\"date_created\\\":\\\"2020-04-22T17:35:02.000-04:00\\\",\\\"date_last_updated\\\":\\\"2020-04-22T17:35:03.000-04:00\\\",\\\"date_of_expiration\\\":null,\\\"deduction_schema\\\":\\\"PROACTIVE_6\\\",\\\"description\\\":\\\"Order # 000019736 in store https:\\\\/\\\\/www.morph.com.ar\\\\/\\\",\\\"differential_pricing_id\\\":33454179,\\\"external_reference\\\":\\\"000019736\\\",\\\"fee_details\\\":[{\\\"amount\\\":139.6,\\\"fee_payer\\\":\\\"collector\\\",\\\"type\\\":\\\"mercadopago_fee\\\"},{\\\"amount\\\":720.48,\\\"fee_payer\\\":\\\"collector\\\",\\\"type\\\":\\\"financing_fee\\\"}],\\\"id\\\":6278625978,\\\"installments\\\":6,\\\"integrator_id\\\":null,\\\"issuer_id\\\":\\\"1044\\\",\\\"live_mode\\\":true,\\\"marketplace_owner\\\":null,\\\"merchant_account_id\\\":null,\\\"merchant_number\\\":null,\\\"metadata\\\":{\\\"token\\\":\\\"6c2ae72c59d03642084bce7560e69c74\\\",\\\"customer_id\\\":\\\"233095302-KWO6KuLJc8VHRG\\\"},\\\"money_release_date\\\":\\\"2020-05-06T17:35:03.000-04:00\\\",\\\"money_release_schema\\\":null,\\\"notification_url\\\":\\\"https:\\\\/\\\\/www.morph.com.ar\\\\/mercadopago\\\\/notifications\\\\/custom\\\\/\\\",\\\"operation_type\\\":\\\"regular_payment\\\",\\\"order\\\":[],\\\"payer\\\":{\\\"email\\\":\\\"mariaemiliayantorno@gmail.com\\\",\\\"entity_type\\\":null,\\\"first_name\\\":\\\"Mar\\\\u00eda Emilia\\\",\\\"id\\\":\\\"233095302\\\",\\\"identification\\\":{\\\"number\\\":\\\"35611571\\\",\\\"type\\\":\\\"DNI\\\"},\\\"last_name\\\":\\\"Yantorno\\\",\\\"operator_id\\\":null,\\\"phone\\\":{\\\"area_code\\\":null,\\\"extension\\\":null,\\\"number\\\":\\\"2214590549\\\"},\\\"type\\\":\\\"guest\\\"},\\\"payment_method_id\\\":\\\"visa\\\",\\\"payment_type_id\\\":\\\"credit_card\\\",\\\"platform_id\\\":null,\\\"pos_id\\\":null,\\\"processing_mode\\\":\\\"aggregator\\\",\\\"refunds\\\":[],\\\"shipping_amount\\\":0,\\\"sponsor_id\\\":222568987,\\\"statement_descriptor\\\":\\\"MERCADOPAGO*MORPH\\\",\\\"status\\\":\\\"approved\\\",\\\"status_detail\\\":\\\"accredited\\\",\\\"store_id\\\":null,\\\"taxes_amount\\\":0,\\\"transaction_amount\\\":3307.99,\\\"transaction_amount_refunded\\\":0,\\\"transaction_details\\\":{\\\"acquirer_reference\\\":null,\\\"external_resource_url\\\":null,\\\"financial_institution\\\":null,\\\"installment_amount\\\":551.33,\\\"net_received_amount\\\":2308.97,\\\"overpaid_amount\\\":0,\\\"payable_deferral_period\\\":null,\\\"payment_method_reference_id\\\":null,\\\"total_paid_amount\\\":3307.99}}\"\n                ],\n                \"amount_ordered\": 3307.99,\n                \"amount_paid\": 3307.99,\n                \"base_amount_ordered\": 3307.99,\n                \"base_amount_paid\": 3307.99,\n                \"base_amount_paid_online\": 3307.99,\n                \"base_shipping_amount\": 519.99,\n                \"base_shipping_captured\": 519.99,\n                \"cc_last4\": null,\n                \"entity_id\": 1526,\n                \"method\": \"mercadopago_custom\",\n                \"parent_id\": 1526,\n                \"shipping_amount\": 519.99,\n                \"shipping_captured\": 519.99\n            },\n            \"status_histories\": [\n                {\n                    \"comment\": \"Captured amount of $3.307,99 online.\",\n                    \"created_at\": \"2020-04-22 21:35:05\",\n                    \"entity_id\": 4778,\n                    \"entity_name\": \"invoice\",\n                    \"is_customer_notified\": null,\n                    \"is_visible_on_front\": 0,\n                    \"parent_id\": 1526,\n                    \"status\": \"processing\"\n                },\n                {\n                    \"comment\": \"Notificación automática de Mercado Pago: El pago fue aprobado.<br/> Número de Pago: 6278625978<br/> Estado: approved<br/> Detalle del Estado: accredited\",\n                    \"created_at\": \"2020-04-22 21:35:05\",\n                    \"entity_id\": 4777,\n                    \"entity_name\": \"order\",\n                    \"is_customer_notified\": null,\n                    \"is_visible_on_front\": 0,\n                    \"parent_id\": 1526,\n                    \"status\": \"processing\"\n                },\n                {\n                    \"comment\": \"Notificación automática de Mercado Pago: El pago fue aprobado.<br/> Número de Pago: 6278625978<br/> Estado: approved<br/> Detalle del Estado: accredited\",\n                    \"created_at\": \"2020-04-22 21:35:05\",\n                    \"entity_id\": 4776,\n                    \"entity_name\": \"order\",\n                    \"is_customer_notified\": 1,\n                    \"is_visible_on_front\": 0,\n                    \"parent_id\": 1526,\n                    \"status\": \"processing\"\n                },\n                {\n                    \"comment\": null,\n                    \"created_at\": \"2020-04-22 21:35:05\",\n                    \"entity_id\": 4775,\n                    \"entity_name\": \"order\",\n                    \"is_customer_notified\": 1,\n                    \"is_visible_on_front\": 0,\n                    \"parent_id\": 1526,\n                    \"status\": \"pending\"\n                }\n            ],\n            \"extension_attributes\": {\n                \"shipping_assignments\": [\n                    {\n                        \"shipping\": {\n                            \"address\": {\n                                \"address_type\": \"shipping\",\n                                \"city\": \"La Plata\",\n                                \"country_id\": \"AR\",\n                                \"email\": \"mariaemiliayantorno@gmail.com\",\n                                \"entity_id\": 3207,\n                                \"firstname\": \"Emilia\",\n                                \"lastname\": \"Yantorno\",\n                                \"parent_id\": 1526,\n                                \"postcode\": \"1900\",\n                                \"region\": \"Buenos Aires\",\n                                \"region_code\": \"AR-B\",\n                                \"region_id\": 578,\n                                \"street\": [\n                                    \"60 entre 9 y 10\"\n                                ],\n                                \"telephone\": \"0221154590549\"\n                            },\n                            \"method\": \"andreaniestandar_estandar\",\n                            \"total\": {\n                                \"base_shipping_amount\": 519.99,\n                                \"base_shipping_discount_amount\": 0,\n                                \"base_shipping_discount_tax_compensation_amnt\": 0,\n                                \"base_shipping_incl_tax\": 519.99,\n                                \"base_shipping_invoiced\": 519.99,\n                                \"base_shipping_tax_amount\": 0,\n                                \"shipping_amount\": 519.99,\n                                \"shipping_discount_amount\": 0,\n                                \"shipping_discount_tax_compensation_amount\": 0,\n                                \"shipping_incl_tax\": 519.99,\n                                \"shipping_invoiced\": 519.99,\n                                \"shipping_tax_amount\": 0\n                            }\n                        },\n                        \"items\": [\n                            {\n                                \"amount_refunded\": 0,\n                                \"base_amount_refunded\": 0,\n                                \"base_discount_amount\": 0,\n                                \"base_discount_invoiced\": 0,\n                                \"base_discount_tax_compensation_amount\": 0,\n                                \"base_discount_tax_compensation_invoiced\": 0,\n                                \"base_original_price\": 790,\n                                \"base_price\": 790,\n                                \"base_price_incl_tax\": 790,\n                                \"base_row_invoiced\": 790,\n                                \"base_row_total\": 790,\n                                \"base_row_total_incl_tax\": 790,\n                                \"base_tax_amount\": 0,\n                                \"base_tax_invoiced\": 0,\n                                \"created_at\": \"2020-04-22 21:35:05\",\n                                \"discount_amount\": 0,\n                                \"discount_invoiced\": 0,\n                                \"discount_percent\": 0,\n                                \"free_shipping\": 0,\n                                \"discount_tax_compensation_amount\": 0,\n                                \"discount_tax_compensation_invoiced\": 0,\n                                \"is_qty_decimal\": 0,\n                                \"is_virtual\": 0,\n                                \"item_id\": 2414,\n                                \"name\": \"Fuente Muffins Cobre x6 Antiadherente\",\n                                \"no_discount\": 0,\n                                \"order_id\": 1526,\n                                \"original_price\": 790,\n                                \"price\": 790,\n                                \"price_incl_tax\": 790,\n                                \"product_id\": 1060,\n                                \"product_type\": \"simple\",\n                                \"qty_canceled\": 0,\n                                \"qty_invoiced\": 1,\n                                \"qty_ordered\": 1,\n                                \"qty_refunded\": 0,\n                                \"qty_shipped\": 0,\n                                \"quote_item_id\": 91500,\n                                \"row_invoiced\": 790,\n                                \"row_total\": 790,\n                                \"row_total_incl_tax\": 790,\n                                \"row_weight\": 0.4,\n                                \"sku\": \"3672922\",\n                                \"store_id\": 1,\n                                \"tax_amount\": 0,\n                                \"tax_invoiced\": 0,\n                                \"tax_percent\": 0,\n                                \"updated_at\": \"2020-04-22 21:35:05\",\n                                \"weee_tax_applied\": \"[]\",\n                                \"weight\": 0.4\n                            },\n                            {\n                                \"amount_refunded\": 0,\n                                \"base_amount_refunded\": 0,\n                                \"base_discount_amount\": 0,\n                                \"base_discount_invoiced\": 0,\n                                \"base_discount_tax_compensation_amount\": 0,\n                                \"base_discount_tax_compensation_invoiced\": 0,\n                                \"base_original_price\": 669,\n                                \"base_price\": 669,\n                                \"base_price_incl_tax\": 669,\n                                \"base_row_invoiced\": 669,\n                                \"base_row_total\": 669,\n                                \"base_row_total_incl_tax\": 669,\n                                \"base_tax_amount\": 0,\n                                \"base_tax_invoiced\": 0,\n                                \"created_at\": \"2020-04-22 21:35:05\",\n                                \"discount_amount\": 0,\n                                \"discount_invoiced\": 0,\n                                \"discount_percent\": 0,\n                                \"free_shipping\": 0,\n                                \"discount_tax_compensation_amount\": 0,\n                                \"discount_tax_compensation_invoiced\": 0,\n                                \"is_qty_decimal\": 0,\n                                \"is_virtual\": 0,\n                                \"item_id\": 2415,\n                                \"name\": \"Budinera Bronce Mediana Antiadherente\",\n                                \"no_discount\": 0,\n                                \"order_id\": 1526,\n                                \"original_price\": 669,\n                                \"price\": 669,\n                                \"price_incl_tax\": 669,\n                                \"product_id\": 1048,\n                                \"product_type\": \"simple\",\n                                \"qty_canceled\": 0,\n                                \"qty_invoiced\": 1,\n                                \"qty_ordered\": 1,\n                                \"qty_refunded\": 0,\n                                \"qty_shipped\": 0,\n                                \"quote_item_id\": 91501,\n                                \"row_invoiced\": 669,\n                                \"row_total\": 669,\n                                \"row_total_incl_tax\": 669,\n                                \"row_weight\": 0.5,\n                                \"sku\": \"3672892\",\n                                \"store_id\": 1,\n                                \"tax_amount\": 0,\n                                \"tax_invoiced\": 0,\n                                \"tax_percent\": 0,\n                                \"updated_at\": \"2020-04-22 21:35:05\",\n                                \"weee_tax_applied\": \"[]\",\n                                \"weight\": 0.5\n                            },\n                            {\n                                \"amount_refunded\": 0,\n                                \"base_amount_refunded\": 0,\n                                \"base_discount_amount\": 0,\n                                \"base_discount_invoiced\": 0,\n                                \"base_discount_tax_compensation_amount\": 0,\n                                \"base_discount_tax_compensation_invoiced\": 0,\n                                \"base_original_price\": 939,\n                                \"base_price\": 939,\n                                \"base_price_incl_tax\": 939,\n                                \"base_row_invoiced\": 939,\n                                \"base_row_total\": 939,\n                                \"base_row_total_incl_tax\": 939,\n                                \"base_tax_amount\": 0,\n                                \"base_tax_invoiced\": 0,\n                                \"created_at\": \"2020-04-22 21:35:05\",\n                                \"discount_amount\": 0,\n                                \"discount_invoiced\": 0,\n                                \"discount_percent\": 0,\n                                \"free_shipping\": 0,\n                                \"discount_tax_compensation_amount\": 0,\n                                \"discount_tax_compensation_invoiced\": 0,\n                                \"is_qty_decimal\": 0,\n                                \"is_virtual\": 0,\n                                \"item_id\": 2416,\n                                \"name\": \"Bowl Steel 2.5 lts\",\n                                \"no_discount\": 0,\n                                \"order_id\": 1526,\n                                \"original_price\": 939,\n                                \"price\": 939,\n                                \"price_incl_tax\": 939,\n                                \"product_id\": 230,\n                                \"product_type\": \"simple\",\n                                \"qty_canceled\": 0,\n                                \"qty_invoiced\": 1,\n                                \"qty_ordered\": 1,\n                                \"qty_refunded\": 0,\n                                \"qty_shipped\": 0,\n                                \"quote_item_id\": 91503,\n                                \"row_invoiced\": 939,\n                                \"row_total\": 939,\n                                \"row_total_incl_tax\": 939,\n                                \"row_weight\": 1,\n                                \"sku\": \"366098\",\n                                \"store_id\": 1,\n                                \"tax_amount\": 0,\n                                \"tax_invoiced\": 0,\n                                \"tax_percent\": 0,\n                                \"updated_at\": \"2020-04-22 21:35:05\",\n                                \"weee_tax_applied\": \"[]\",\n                                \"weight\": 1\n                            },\n                            {\n                                \"amount_refunded\": 0,\n                                \"base_amount_refunded\": 0,\n                                \"base_discount_amount\": 0,\n                                \"base_discount_invoiced\": 0,\n                                \"base_discount_tax_compensation_amount\": 0,\n                                \"base_discount_tax_compensation_invoiced\": 0,\n                                \"base_original_price\": 390,\n                                \"base_price\": 390,\n                                \"base_price_incl_tax\": 390,\n                                \"base_row_invoiced\": 390,\n                                \"base_row_total\": 390,\n                                \"base_row_total_incl_tax\": 390,\n                                \"base_tax_amount\": 0,\n                                \"base_tax_invoiced\": 0,\n                                \"created_at\": \"2020-04-22 21:35:05\",\n                                \"discount_amount\": 0,\n                                \"discount_invoiced\": 0,\n                                \"discount_percent\": 0,\n                                \"free_shipping\": 0,\n                                \"discount_tax_compensation_amount\": 0,\n                                \"discount_tax_compensation_invoiced\": 0,\n                                \"is_qty_decimal\": 0,\n                                \"is_virtual\": 0,\n                                \"item_id\": 2417,\n                                \"name\": \"Exprimidor con Colador\",\n                                \"no_discount\": 0,\n                                \"order_id\": 1526,\n                                \"original_price\": 390,\n                                \"price\": 390,\n                                \"price_incl_tax\": 390,\n                                \"product_id\": 928,\n                                \"product_type\": \"simple\",\n                                \"qty_canceled\": 0,\n                                \"qty_invoiced\": 1,\n                                \"qty_ordered\": 1,\n                                \"qty_refunded\": 0,\n                                \"qty_shipped\": 0,\n                                \"quote_item_id\": 91504,\n                                \"row_invoiced\": 390,\n                                \"row_total\": 390,\n                                \"row_total_incl_tax\": 390,\n                                \"row_weight\": 0.3,\n                                \"sku\": \"367205\",\n                                \"store_id\": 1,\n                                \"tax_amount\": 0,\n                                \"tax_invoiced\": 0,\n                                \"tax_percent\": 0,\n                                \"updated_at\": \"2020-04-22 21:35:05\",\n                                \"weee_tax_applied\": \"[]\",\n                                \"weight\": 0.3\n                            }\n                        ]\n                    }\n                ],\n                \"payment_additional_info\": [\n                    {\n                        \"key\": \"payment[method]\",\n                        \"value\": \"mercadopago_custom\"\n                    },\n                    {\n                        \"key\": \"card_expiration_month\",\n                        \"value\": \"9\"\n                    },\n                    {\n                        \"key\": \"card_expiration_year\",\n                        \"value\": \"2024\"\n                    },\n                    {\n                        \"key\": \"card_holder_name\",\n                        \"value\": \"María Emil Yantorno\"\n                    },\n                    {\n                        \"key\": \"doc_type\",\n                        \"value\": \"DNI\"\n                    },\n                    {\n                        \"key\": \"doc_number\",\n                        \"value\": \"35611571\"\n                    },\n                    {\n                        \"key\": \"installments\",\n                        \"value\": \"6\"\n                    },\n                    {\n                        \"key\": \"total_amount\",\n                        \"value\": \"3307.99\"\n                    },\n                    {\n                        \"key\": \"amount\",\n                        \"value\": \"3307.99\"\n                    },\n                    {\n                        \"key\": \"site_id\",\n                        \"value\": \"MLA\"\n                    },\n                    {\n                        \"key\": \"token\",\n                        \"value\": \"6c2ae72c59d03642084bce7560e69c74\"\n                    },\n                    {\n                        \"key\": \"payment_method_id\",\n                        \"value\": \"visa\"\n                    },\n                    {\n                        \"key\": \"payment_method_selector\",\n                        \"value\": \"-1\"\n                    },\n                    {\n                        \"key\": \"one_click_pay\",\n                        \"value\": \"\"\n                    },\n                    {\n                        \"key\": \"issuer_id\",\n                        \"value\": \"-1\"\n                    },\n                    {\n                        \"key\": \"coupon_code\",\n                        \"value\": \"\"\n                    },\n                    {\n                        \"key\": \"payment_type_id\",\n                        \"value\": \"credit_card\"\n                    },\n                    {\n                        \"key\": \"expiration_date\",\n                        \"value\": \"9/2024\"\n                    },\n                    {\n                        \"key\": \"payment_method\",\n                        \"value\": \"visa\"\n                    },\n                    {\n                        \"key\": \"cardholderName\",\n                        \"value\": \"María Emil Yantorno\"\n                    },\n                    {\n                        \"key\": \"method_title\",\n                        \"value\": \"Tarjeta de crédito / débito\"\n                    },\n                    {\n                        \"key\": \"paymentResponse\",\n                        \"value\": \"{\\\"acquirer\\\":null,\\\"acquirer_reconciliation\\\":[],\\\"additional_info\\\":{\\\"available_balance\\\":null,\\\"items\\\":[{\\\"category_id\\\":\\\"others\\\",\\\"description\\\":\\\"Bowl Steel 2.5 lts\\\",\\\"id\\\":\\\"366098\\\",\\\"picture_url\\\":\\\"https:\\\\/\\\\/www.morph.com.ar\\\\/pub\\\\/static\\\\/version1581074478\\\\/webapi_rest\\\\/_view\\\\/es_AR\\\\/Magento_Catalog\\\\/images\\\\/product\\\\/placeholder\\\\/.jpg\\\",\\\"quantity\\\":\\\"1\\\",\\\"title\\\":\\\"Bowl Steel 2.5 lts\\\",\\\"unit_price\\\":\\\"939\\\"},{\\\"category_id\\\":\\\"others\\\",\\\"description\\\":\\\"Budinera Bronce Mediana Antiadherente\\\",\\\"id\\\":\\\"3672892\\\",\\\"picture_url\\\":\\\"https:\\\\/\\\\/www.morph.com.ar\\\\/pub\\\\/static\\\\/version1581074478\\\\/webapi_rest\\\\/_view\\\\/es_AR\\\\/Magento_Catalog\\\\/images\\\\/product\\\\/placeholder\\\\/.jpg\\\",\\\"quantity\\\":\\\"1\\\",\\\"title\\\":\\\"Budinera Bronce Mediana Antiadherente\\\",\\\"unit_price\\\":\\\"669\\\"},{\\\"category_id\\\":\\\"others\\\",\\\"description\\\":\\\"Fuente Muffins Cobre x6 Antiadherente\\\",\\\"id\\\":\\\"3672922\\\",\\\"picture_url\\\":\\\"https:\\\\/\\\\/www.morph.com.ar\\\\/pub\\\\/static\\\\/version1581074478\\\\/webapi_rest\\\\/_view\\\\/es_AR\\\\/Magento_Catalog\\\\/images\\\\/product\\\\/placeholder\\\\/.jpg\\\",\\\"quantity\\\":\\\"1\\\",\\\"title\\\":\\\"Fuente Muffins Cobre x6 Antiadherente\\\",\\\"unit_price\\\":\\\"790\\\"},{\\\"category_id\\\":\\\"others\\\",\\\"description\\\":\\\"Exprimidor con Colador\\\",\\\"id\\\":\\\"367205\\\",\\\"picture_url\\\":\\\"https:\\\\/\\\\/www.morph.com.ar\\\\/pub\\\\/static\\\\/version1581074478\\\\/webapi_rest\\\\/_view\\\\/es_AR\\\\/Magento_Catalog\\\\/images\\\\/product\\\\/placeholder\\\\/.jpg\\\",\\\"quantity\\\":\\\"1\\\",\\\"title\\\":\\\"Exprimidor con Colador\\\",\\\"unit_price\\\":\\\"390\\\"}],\\\"nsu_processadora\\\":null,\\\"payer\\\":{\\\"address\\\":{\\\"street_name\\\":\\\"60 entre 9 y 10 - La Plata - AR\\\",\\\"zip_code\\\":\\\"1900\\\"},\\\"first_name\\\":\\\"Emilia\\\",\\\"last_name\\\":\\\"Yantorno\\\",\\\"phone\\\":{\\\"area_code\\\":\\\"0\\\",\\\"number\\\":\\\"0221154590549\\\"},\\\"registration_date\\\":\\\"1970-01-01T00:00:00\\\"},\\\"shipments\\\":{\\\"receiver_address\\\":{\\\"apartment\\\":\\\"-\\\",\\\"floor\\\":\\\"-\\\",\\\"street_name\\\":\\\"60 entre 9 y 10 - La Plata - AR\\\",\\\"zip_code\\\":\\\"1900\\\"}}},\\\"authorization_code\\\":\\\"018985\\\",\\\"binary_mode\\\":false,\\\"call_for_authorize_id\\\":null,\\\"captured\\\":true,\\\"card\\\":{\\\"cardholder\\\":{\\\"identification\\\":{\\\"number\\\":\\\"35611571\\\",\\\"type\\\":\\\"DNI\\\"},\\\"name\\\":\\\"Maria Emil Yantorno\\\"},\\\"date_created\\\":\\\"2020-04-22T17:35:02.000-04:00\\\",\\\"date_last_updated\\\":\\\"2020-04-22T17:35:02.000-04:00\\\",\\\"expiration_month\\\":9,\\\"expiration_year\\\":2024,\\\"first_six_digits\\\":\\\"454846\\\",\\\"id\\\":null,\\\"last_four_digits\\\":\\\"3767\\\"},\\\"collector_id\\\":148976079,\\\"corporation_id\\\":null,\\\"counter_currency\\\":null,\\\"coupon_amount\\\":0,\\\"currency_id\\\":\\\"ARS\\\",\\\"date_approved\\\":\\\"2020-04-22T17:35:03.000-04:00\\\",\\\"date_created\\\":\\\"2020-04-22T17:35:02.000-04:00\\\",\\\"date_last_updated\\\":\\\"2020-04-22T17:35:03.000-04:00\\\",\\\"date_of_expiration\\\":null,\\\"deduction_schema\\\":\\\"PROACTIVE_6\\\",\\\"description\\\":\\\"Order # 000019736 in store https:\\\\/\\\\/www.morph.com.ar\\\\/\\\",\\\"differential_pricing_id\\\":33454179,\\\"external_reference\\\":\\\"000019736\\\",\\\"fee_details\\\":[{\\\"amount\\\":139.6,\\\"fee_payer\\\":\\\"collector\\\",\\\"type\\\":\\\"mercadopago_fee\\\"},{\\\"amount\\\":720.48,\\\"fee_payer\\\":\\\"collector\\\",\\\"type\\\":\\\"financing_fee\\\"}],\\\"id\\\":6278625978,\\\"installments\\\":6,\\\"integrator_id\\\":null,\\\"issuer_id\\\":\\\"1044\\\",\\\"live_mode\\\":true,\\\"marketplace_owner\\\":null,\\\"merchant_account_id\\\":null,\\\"merchant_number\\\":null,\\\"metadata\\\":{\\\"token\\\":\\\"6c2ae72c59d03642084bce7560e69c74\\\",\\\"customer_id\\\":\\\"233095302-KWO6KuLJc8VHRG\\\"},\\\"money_release_date\\\":\\\"2020-05-06T17:35:03.000-04:00\\\",\\\"money_release_schema\\\":null,\\\"notification_url\\\":\\\"https:\\\\/\\\\/www.morph.com.ar\\\\/mercadopago\\\\/notifications\\\\/custom\\\\/\\\",\\\"operation_type\\\":\\\"regular_payment\\\",\\\"order\\\":[],\\\"payer\\\":{\\\"email\\\":\\\"mariaemiliayantorno@gmail.com\\\",\\\"entity_type\\\":null,\\\"first_name\\\":\\\"Mar\\\\u00eda Emilia\\\",\\\"id\\\":\\\"233095302\\\",\\\"identification\\\":{\\\"number\\\":\\\"35611571\\\",\\\"type\\\":\\\"DNI\\\"},\\\"last_name\\\":\\\"Yantorno\\\",\\\"operator_id\\\":null,\\\"phone\\\":{\\\"area_code\\\":null,\\\"extension\\\":null,\\\"number\\\":\\\"2214590549\\\"},\\\"type\\\":\\\"guest\\\"},\\\"payment_method_id\\\":\\\"visa\\\",\\\"payment_type_id\\\":\\\"credit_card\\\",\\\"platform_id\\\":null,\\\"pos_id\\\":null,\\\"processing_mode\\\":\\\"aggregator\\\",\\\"refunds\\\":[],\\\"shipping_amount\\\":0,\\\"sponsor_id\\\":222568987,\\\"statement_descriptor\\\":\\\"MERCADOPAGO*MORPH\\\",\\\"status\\\":\\\"approved\\\",\\\"status_detail\\\":\\\"accredited\\\",\\\"store_id\\\":null,\\\"taxes_amount\\\":0,\\\"transaction_amount\\\":3307.99,\\\"transaction_amount_refunded\\\":0,\\\"transaction_details\\\":{\\\"acquirer_reference\\\":null,\\\"external_resource_url\\\":null,\\\"financial_institution\\\":null,\\\"installment_amount\\\":551.33,\\\"net_received_amount\\\":2308.97,\\\"overpaid_amount\\\":0,\\\"payable_deferral_period\\\":null,\\\"payment_method_reference_id\\\":null,\\\"total_paid_amount\\\":3307.99}}\"\n                    }\n                ],\n                \"applied_taxes\": [],\n                \"item_applied_taxes\": []\n            }\n        }\n    ],\n    \"search_criteria\": {\n        \"filter_groups\": [\n            {\n                \"filters\": [\n                    {\n                        \"field\": \"status\",\n                        \"value\": \"processing\",\n                        \"condition_type\": \"eq\"\n                    }\n                ]\n            },\n            {\n                \"filters\": [\n                    {\n                        \"field\": \"state\",\n                        \"value\": \"processing\",\n                        \"condition_type\": \"eq\"\n                    }\n                ]\n            },\n            {\n                \"filters\": [\n                    {\n                        \"field\": \"shipping_description\",\n                        \"value\": \"Andreani Estandar - Recibí el pedido en tu casa.\",\n                        \"condition_type\": \"neq\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"total_count\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "Modificar estados",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "rgu5kdpsl7hhovko8qycd26dlomgi99n",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"entity\":{\r\n    \"entity_id\":4,\r\n    \"state\":\"processing\",\r\n    \"increment_id\":\"0000000004\"\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "http://123.456.789.102/rest/V1/orders",
+					"protocol": "http",
+					"host": [
+						"123",
+						"456",
+						"789",
+						"102"
+					],
+					"path": [
+						"rest",
+						"V1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener orden id 1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "rgu5kdpsl7hhovko8qycd26dlomgi99n",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://123.456.789.102/rest/V1/orders/4",
+					"protocol": "http",
+					"host": [
+						"123",
+						"456",
+						"789",
+						"102"
+					],
+					"path": [
+						"rest",
+						"V1",
+						"orders",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener orden id 1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://167.71.105.215/rest/V1/orders/4",
+							"protocol": "http",
+							"host": [
+								"167",
+								"71",
+								"105",
+								"215"
+							],
+							"path": [
+								"rest",
+								"V1",
+								"orders",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 22 Apr 2020 21:48:05 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.29 (Ubuntu)"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "PHPSESSID=2nlvou4g2h4e5hl2435ebuhtf7; expires=Wed, 03-Jun-2020 13:48:05 GMT; Max-Age=3600000; path=/; domain=167.71.105.215; HttpOnly"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5724"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"base_currency_code\": \"ARS\",\n    \"base_discount_amount\": 0,\n    \"base_discount_invoiced\": 0,\n    \"base_grand_total\": 1320,\n    \"base_discount_tax_compensation_amount\": 0,\n    \"base_discount_tax_compensation_invoiced\": 0,\n    \"base_shipping_amount\": 0,\n    \"base_shipping_discount_amount\": 0,\n    \"base_shipping_discount_tax_compensation_amnt\": 0,\n    \"base_shipping_incl_tax\": 0,\n    \"base_shipping_invoiced\": 0,\n    \"base_shipping_tax_amount\": 0,\n    \"base_subtotal\": 1320,\n    \"base_subtotal_incl_tax\": 1320,\n    \"base_subtotal_invoiced\": 1320,\n    \"base_tax_amount\": 0,\n    \"base_tax_invoiced\": 0,\n    \"base_total_due\": 0,\n    \"base_total_invoiced\": 1320,\n    \"base_total_invoiced_cost\": 0,\n    \"base_total_paid\": 1320,\n    \"base_to_global_rate\": 1,\n    \"base_to_order_rate\": 1,\n    \"billing_address_id\": 7,\n    \"created_at\": \"2019-09-09 19:39:56\",\n    \"customer_email\": \"matiasy@morph.com.ar\",\n    \"customer_firstname\": \"MATIAS\",\n    \"customer_group_id\": 1,\n    \"customer_id\": 3,\n    \"customer_is_guest\": 0,\n    \"customer_lastname\": \"YBARRA\",\n    \"customer_note_notify\": 0,\n    \"discount_amount\": 0,\n    \"discount_invoiced\": 0,\n    \"email_sent\": 1,\n    \"entity_id\": 4,\n    \"global_currency_code\": \"ARS\",\n    \"grand_total\": 1320,\n    \"discount_tax_compensation_amount\": 0,\n    \"discount_tax_compensation_invoiced\": 0,\n    \"increment_id\": \"0000000004\",\n    \"is_virtual\": 0,\n    \"order_currency_code\": \"ARS\",\n    \"protect_code\": \"6d4ae6e93d3c062404497b7d4c2402f4\",\n    \"quote_id\": 18,\n    \"remote_ip\": \"190.194.208.248\",\n    \"shipping_amount\": 0,\n    \"shipping_description\": \"Retiro en sucursal - Av. Corrientes 3247, Capital Federal - (011) 4959 3460\",\n    \"shipping_discount_amount\": 0,\n    \"shipping_discount_tax_compensation_amount\": 0,\n    \"shipping_incl_tax\": 0,\n    \"shipping_invoiced\": 0,\n    \"shipping_tax_amount\": 0,\n    \"state\": \"processing\",\n    \"status\": \"En_preparacion\",\n    \"store_currency_code\": \"ARS\",\n    \"store_id\": 1,\n    \"store_name\": \"Main Website\\nMain Website Store\\n\",\n    \"store_to_base_rate\": 0,\n    \"store_to_order_rate\": 0,\n    \"subtotal\": 1320,\n    \"subtotal_incl_tax\": 1320,\n    \"subtotal_invoiced\": 1320,\n    \"tax_amount\": 0,\n    \"tax_invoiced\": 0,\n    \"total_due\": 0,\n    \"total_invoiced\": 1320,\n    \"total_item_count\": 1,\n    \"total_paid\": 1320,\n    \"total_qty_ordered\": 1,\n    \"updated_at\": \"2020-01-17 03:21:17\",\n    \"weight\": 2.5,\n    \"items\": [\n        {\n            \"amount_refunded\": 0,\n            \"base_amount_refunded\": 0,\n            \"base_discount_amount\": 0,\n            \"base_discount_invoiced\": 0,\n            \"base_discount_tax_compensation_amount\": 0,\n            \"base_discount_tax_compensation_invoiced\": 0,\n            \"base_original_price\": 1590,\n            \"base_price\": 1320,\n            \"base_price_incl_tax\": 1320,\n            \"base_row_invoiced\": 1320,\n            \"base_row_total\": 1320,\n            \"base_row_total_incl_tax\": 1320,\n            \"base_tax_amount\": 0,\n            \"base_tax_invoiced\": 0,\n            \"created_at\": \"2019-09-09 19:39:56\",\n            \"discount_amount\": 0,\n            \"discount_invoiced\": 0,\n            \"discount_percent\": 0,\n            \"free_shipping\": 0,\n            \"discount_tax_compensation_amount\": 0,\n            \"discount_tax_compensation_invoiced\": 0,\n            \"is_qty_decimal\": 0,\n            \"is_virtual\": 0,\n            \"item_id\": 4,\n            \"name\": \"Macetero Geo Bass Chico\",\n            \"no_discount\": 0,\n            \"order_id\": 4,\n            \"original_price\": 1590,\n            \"price\": 1320,\n            \"price_incl_tax\": 1320,\n            \"product_id\": 5,\n            \"product_type\": \"simple\",\n            \"qty_canceled\": 0,\n            \"qty_invoiced\": 1,\n            \"qty_ordered\": 1,\n            \"qty_refunded\": 0,\n            \"qty_shipped\": 0,\n            \"quote_item_id\": 17,\n            \"row_invoiced\": 1320,\n            \"row_total\": 1320,\n            \"row_total_incl_tax\": 1320,\n            \"row_weight\": 2.5,\n            \"sku\": \"335221\",\n            \"store_id\": 1,\n            \"tax_amount\": 0,\n            \"tax_invoiced\": 0,\n            \"tax_percent\": 0,\n            \"updated_at\": \"2020-01-14 01:58:12\",\n            \"weee_tax_applied\": \"[]\",\n            \"weight\": 2.5\n        }\n    ],\n    \"billing_address\": {\n        \"address_type\": \"billing\",\n        \"city\": \"LA MATANZA\",\n        \"country_id\": \"AR\",\n        \"email\": \"matiasy@morph.com.ar\",\n        \"entity_id\": 7,\n        \"firstname\": \"MATIAS\",\n        \"lastname\": \"MATIAS\",\n        \"parent_id\": 4,\n        \"postcode\": \"1766\",\n        \"region\": \"Buenos Aires\",\n        \"region_code\": \"AR-B\",\n        \"region_id\": 578,\n        \"street\": [\n            \"GAVILAN\"\n        ],\n        \"telephone\": \"01150565485\"\n    },\n    \"payment\": {\n        \"account_status\": null,\n        \"additional_information\": [\n            \"Efectivo\"\n        ],\n        \"amount_ordered\": 1320,\n        \"amount_paid\": 1320,\n        \"base_amount_ordered\": 1320,\n        \"base_amount_paid\": 1320,\n        \"base_shipping_amount\": 0,\n        \"base_shipping_captured\": 0,\n        \"cc_last4\": null,\n        \"entity_id\": 4,\n        \"method\": \"checkmo\",\n        \"parent_id\": 4,\n        \"shipping_amount\": 0,\n        \"shipping_captured\": 0\n    },\n    \"status_histories\": [],\n    \"extension_attributes\": {\n        \"shipping_assignments\": [\n            {\n                \"shipping\": {\n                    \"address\": {\n                        \"address_type\": \"shipping\",\n                        \"city\": \"LA MATANZA\",\n                        \"country_id\": \"AR\",\n                        \"customer_address_id\": 1,\n                        \"email\": \"matiasy@morph.com.ar\",\n                        \"entity_id\": 8,\n                        \"firstname\": \"MATIAS\",\n                        \"lastname\": \"MATIAS\",\n                        \"parent_id\": 4,\n                        \"postcode\": \"1766\",\n                        \"region\": \"Buenos Aires\",\n                        \"region_code\": \"AR-B\",\n                        \"region_id\": 578,\n                        \"street\": [\n                            \"GAVILAN\"\n                        ],\n                        \"telephone\": \"01150565485\"\n                    },\n                    \"method\": \"retirosucursal_sucursal\",\n                    \"total\": {\n                        \"base_shipping_amount\": 0,\n                        \"base_shipping_discount_amount\": 0,\n                        \"base_shipping_discount_tax_compensation_amnt\": 0,\n                        \"base_shipping_incl_tax\": 0,\n                        \"base_shipping_invoiced\": 0,\n                        \"base_shipping_tax_amount\": 0,\n                        \"shipping_amount\": 0,\n                        \"shipping_discount_amount\": 0,\n                        \"shipping_discount_tax_compensation_amount\": 0,\n                        \"shipping_incl_tax\": 0,\n                        \"shipping_invoiced\": 0,\n                        \"shipping_tax_amount\": 0\n                    }\n                },\n                \"items\": [\n                    {\n                        \"amount_refunded\": 0,\n                        \"base_amount_refunded\": 0,\n                        \"base_discount_amount\": 0,\n                        \"base_discount_invoiced\": 0,\n                        \"base_discount_tax_compensation_amount\": 0,\n                        \"base_discount_tax_compensation_invoiced\": 0,\n                        \"base_original_price\": 1590,\n                        \"base_price\": 1320,\n                        \"base_price_incl_tax\": 1320,\n                        \"base_row_invoiced\": 1320,\n                        \"base_row_total\": 1320,\n                        \"base_row_total_incl_tax\": 1320,\n                        \"base_tax_amount\": 0,\n                        \"base_tax_invoiced\": 0,\n                        \"created_at\": \"2019-09-09 19:39:56\",\n                        \"discount_amount\": 0,\n                        \"discount_invoiced\": 0,\n                        \"discount_percent\": 0,\n                        \"free_shipping\": 0,\n                        \"discount_tax_compensation_amount\": 0,\n                        \"discount_tax_compensation_invoiced\": 0,\n                        \"is_qty_decimal\": 0,\n                        \"is_virtual\": 0,\n                        \"item_id\": 4,\n                        \"name\": \"Macetero Geo Bass Chico\",\n                        \"no_discount\": 0,\n                        \"order_id\": 4,\n                        \"original_price\": 1590,\n                        \"price\": 1320,\n                        \"price_incl_tax\": 1320,\n                        \"product_id\": 5,\n                        \"product_type\": \"simple\",\n                        \"qty_canceled\": 0,\n                        \"qty_invoiced\": 1,\n                        \"qty_ordered\": 1,\n                        \"qty_refunded\": 0,\n                        \"qty_shipped\": 0,\n                        \"quote_item_id\": 17,\n                        \"row_invoiced\": 1320,\n                        \"row_total\": 1320,\n                        \"row_total_incl_tax\": 1320,\n                        \"row_weight\": 2.5,\n                        \"sku\": \"335221\",\n                        \"store_id\": 1,\n                        \"tax_amount\": 0,\n                        \"tax_invoiced\": 0,\n                        \"tax_percent\": 0,\n                        \"updated_at\": \"2020-01-14 01:58:12\",\n                        \"weee_tax_applied\": \"[]\",\n                        \"weight\": 2.5\n                    }\n                ]\n            }\n        ],\n        \"payment_additional_info\": [\n            {\n                \"key\": \"method_title\",\n                \"value\": \"Efectivo\"\n            }\n        ],\n        \"applied_taxes\": [],\n        \"item_applied_taxes\": []\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener ordenes completas y por tienda",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "rgu5kdpsl7hhovko8qycd26dlomgi99n",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://123.456.789.102/rest/V1/orders?searchCriteria[filter_groups][0][filters][0][field]=status&searchCriteria[filter_groups][0][filters][0][value]=complete",
+					"protocol": "http",
+					"host": [
+						"123",
+						"456",
+						"789",
+						"102"
+					],
+					"path": [
+						"rest",
+						"V1",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "searchCriteria[filter_groups][0][filters][0][field]",
+							"value": "status"
+						},
+						{
+							"key": "searchCriteria[filter_groups][0][filters][0][value]",
+							"value": "complete"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener detalle de un articulo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "rgu5kdpsl7hhovko8qycd26dlomgi99n",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://123.456.789.102/rest/V1/products/331149",
+					"protocol": "http",
+					"host": [
+						"123",
+						"456",
+						"789",
+						"102"
+					],
+					"path": [
+						"rest",
+						"V1",
+						"products",
+						"331149"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar stock de un articulo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "rgu5kdpsl7hhovko8qycd26dlomgi99n",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"stockItem\": {\n        \"qty\": 3\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://123.456.789.102/rest/V1/products/331149/stockItems/1",
+					"protocol": "http",
+					"host": [
+						"123",
+						"456",
+						"789",
+						"102"
+					],
+					"path": [
+						"rest",
+						"V1",
+						"products",
+						"331149",
+						"stockItems",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar precio de un articulo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "rgu5kdpsl7hhovko8qycd26dlomgi99n",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product\": {\n    \t\"price\": 3960\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://123.456.789.102/rest/V1/products/331149",
+					"protocol": "http",
+					"host": [
+						"123",
+						"456",
+						"789",
+						"102"
+					],
+					"path": [
+						"rest",
+						"V1",
+						"products",
+						"331149"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

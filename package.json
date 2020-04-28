@@ -15,7 +15,7 @@
     "url": "https://github.com/Paulo-Ariel-Pareja/post-collection-2-yaml"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.6.0",

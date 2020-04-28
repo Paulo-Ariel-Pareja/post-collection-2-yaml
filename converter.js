@@ -1,46 +1,39 @@
 const yaml = require('js-yaml');
 const fs = require('fs');
 
-module.exports.converter = async(input, output, options ={}) => {
+module.exports.converter = async (input, output, options = {}) => {
     const postmanRaw = require(input);
     const pathsOfPostman = postmanRaw.item;
     const paths = {}
-    
+
     pathsOfPostman.forEach(element => {
         const originalItem = element;
         const originalMethod = originalItem.request.method.toLowerCase();
         const summary = originalItem.name;
         console.log(`INI ${originalMethod} - ${summary}`);
-    
+
         let pathOriginal = '';
         originalItem.request.url.path.forEach(value => {
             pathOriginal = `${pathOriginal}/${value}`
         })
-    
+
         if (!paths[pathOriginal]) paths[pathOriginal] = {}
         paths[pathOriginal][originalMethod] = {}
         paths[pathOriginal][originalMethod]['summary'] = summary
-    
+
         let parameters = [];
         try {
             //body
             if (originalItem.request.body && originalMethod !== 'get' && originalMethod !== 'delete') {
                 if (originalItem.request.body.raw || originalItem.request.body.raw === '') {
                     let example = originalItem.request.body.raw;
-                    let type;
-                    if (Array.isArray(example)) {
-                        type = 'array';
-                    } else if (typeof example === 'string') {
-                        type = 'string'
-                    } else {
-                        type = 'object'
-                        example = JSON.parse(example)
-                    }
+                    example = JSON.parse(example)
+
                     let object = {
                         content: {
                             'application/json': {
                                 schema: {
-                                    type,
+                                    'object',
                                     example
                                 }
                             }
@@ -96,7 +89,7 @@ module.exports.converter = async(input, output, options ={}) => {
             console.log(error.message);
             console.log('**************');
         }
-    
+
         //parametros de authorization
         try {
             if (originalItem.request.auth) {
@@ -109,7 +102,7 @@ module.exports.converter = async(input, output, options ={}) => {
             console.log(error.message);
             console.log('**************');
         }
-    
+
         //headers
         try {
             if (originalItem.request.header) {
@@ -122,7 +115,7 @@ module.exports.converter = async(input, output, options ={}) => {
                             type: 'string',
                             example: originalItem.request.header[i].value
                         }
-    
+
                     }
                     parameters.push(query);
                 }
@@ -133,7 +126,7 @@ module.exports.converter = async(input, output, options ={}) => {
             console.log('**************');
         }
         // otros parametros
-    
+
         try {
             if (originalItem.request.url.query) {
                 for (let i = 0; i < originalItem.request.url.query.length; i++) {
@@ -153,11 +146,11 @@ module.exports.converter = async(input, output, options ={}) => {
             console.log(error.message);
             console.log('**************');
         }
-    
+
         if (parameters.length > 0) {
             paths[pathOriginal][originalMethod]['parameters'] = parameters
         }
-    
+
         paths[pathOriginal][originalMethod]['tags'] = ['Default']
         //responses
         try {
@@ -194,7 +187,7 @@ module.exports.converter = async(input, output, options ={}) => {
             console.log('**************');
         }
         console.log(`FIN ${originalMethod} - ${summary}`);
-    
+
     });
 
     const url = options.url || 'localhost:8080';
@@ -223,7 +216,7 @@ module.exports.converter = async(input, output, options ={}) => {
         tags: [{ name: 'Default', description: 'tag default' }],
         paths
     };
-    
+
     let yamlStr = yaml.safeDump(data);
     fs.writeFileSync(output, yamlStr, 'utf8');
 };

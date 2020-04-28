@@ -1,6 +1,6 @@
 {
   "name": "post-collection-to-yaml",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "converter postman collection v2.1 to swagger (openapi 3.0.0) yaml",
   "main": "index.js",
   "scripts": {

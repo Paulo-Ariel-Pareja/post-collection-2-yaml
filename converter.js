@@ -170,7 +170,7 @@ module.exports.converter = async (input, output, options = {}) => {
                 } else {
                     for (let i = 0; i < originalItem.response.length; i++) {
                         const responseItem = originalItem.response[i];
-                        const body = responseItem.body;
+                        const body = JSON.parse(responseItem.body);
                         const description = responseItem.name;
                         paths[pathOriginal][originalMethod]['responses'] = {};
                         paths[pathOriginal][originalMethod]['responses'][responseItem.code] = {};

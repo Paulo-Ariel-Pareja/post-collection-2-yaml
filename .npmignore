@@ -1,3 +1,9 @@
 example.gif
 example/
 example
+
+package-lock.json
+
+.editorconfig
+.eslintignore
+.eslintrc.json

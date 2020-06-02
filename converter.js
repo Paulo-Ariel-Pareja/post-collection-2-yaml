@@ -26,6 +26,7 @@ module.exports.converter = async (input, output, options = {}) => {
       if (originalItem.request.body && originalMethod !== 'get' && originalMethod !== 'delete') {
         if (originalItem.request.body.raw || originalItem.request.body.raw === '') {
           let example = originalItem.request.body.raw;
+          if (example === '') example = '{}';
           let type = 'object'
           example = JSON.parse(example)
 

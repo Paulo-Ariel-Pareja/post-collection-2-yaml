@@ -10,9 +10,11 @@ npm i post-collection-to-yaml
 ```
 const postToYaml = require('post-collection-to-yaml');
 
-const stringInput = 'path/to/post-collection.json';
-const stringOutput = 'path/to/save.yaml';
+const fileIn = 'path/to/post-collection.json';
+const fileOut = 'path/to/save.yaml';
 
+const stringInput = path.join(__dirname, fileIn);
+const stringOutput = path.join(__dirname, fileOut);
 await postToYaml.convert(stringInput, stringOutput);
 
 ```
@@ -23,17 +25,20 @@ Recive 2 params: a string of path and file from Postman Collection and a string 
 ```
 const postToYaml = require('post-collection-to-yaml');
 
-const stringInput = 'path/to/post-collection.json';
-const stringOutput = 'path/to/save.yaml';
+const fileIn = 'path/to/post-collection.json';
+const fileOut = 'path/to/save.yaml';
 
 const options = {
     url: 'localhost:8080',
-    description: 'An description',
+    description: 'server description',
     title: 'post-collection-to-yaml',
     version: '1.0.0',
-    descriptionInfo: 'Some description',
+    descriptionInfo: 'service description',
     email: 'adndevelopersoftware@gmail.com'
 }
+
+const stringInput = path.join(__dirname, fileIn);
+const stringOutput = path.join(__dirname, fileOut);
 await postToYaml.convert(stringInput, stringOutput, options);
 
 ```

@@ -7,10 +7,10 @@ const fileOut = 'save.yaml';
 const run = async () => {
     const options = {
         url: 'localhost:3030',
-        description: 'otra cosa',
+        description: 'server description',
         title: 'titulo de prueba',
         version: '10.0.0',
-        descriptionInfo: 'Otra descripcion',
+        descriptionInfo: 'service description',
         email: 'adndevelopersoftware@gmail.com'
     }
     const stringInput = path.join(__dirname, fileIn);

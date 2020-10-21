@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "post-collection-to-yaml": "^1.0.2"
+    "post-collection-to-yaml": "^1.0.8"
   }
 }

@@ -18,6 +18,10 @@ const stringOutput = path.join(__dirname, fileOut);
 await postToYaml.convert(stringInput, stringOutput);
 
 ```
+
+### Make responses easy!
+Save you responses on postman, and we will make example for response on swagger
+
 ### Params
 Recive 2 params: a string of path and file from Postman Collection and a string of output, place to save you swagger file. Can create your report when lifting your service.
 

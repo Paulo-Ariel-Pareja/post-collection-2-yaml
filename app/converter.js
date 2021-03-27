@@ -28,12 +28,19 @@ const makeSwagger = (elements) => {
 
   let pathOriginal = '';
   originalItem.request.url.path.forEach(value => {
-    pathOriginal = `${pathOriginal}/${value}`
-  })
+    if (value.indexOf('{{') >= 0 && !value.indexOf('}}') >= 0) {
+      const start = value.indexOf('{{');
+      const end = value.indexOf('}}');
+      let valueMask = value.substring((start + 2), (end - 2));
+      pathOriginal = `${pathOriginal}/:${valueMask}`;
+    } else {
+      pathOriginal = `${pathOriginal}/${value}`;
+    }
+  });
 
-  if (!paths[pathOriginal]) paths[pathOriginal] = {}
-  paths[pathOriginal][originalMethod] = {}
-  paths[pathOriginal][originalMethod]['summary'] = summary
+  if (!paths[pathOriginal]) paths[pathOriginal] = {};
+  paths[pathOriginal][originalMethod] = {};
+  paths[pathOriginal][originalMethod]['summary'] = summary;
 
   let parameters = [];
   try {
@@ -41,8 +48,8 @@ const makeSwagger = (elements) => {
       if (originalItem.request.body.raw || originalItem.request.body.raw === '') {
         let example = originalItem.request.body.raw;
         if (example === '') example = '{}';
-        let type = 'object'
-        example = JSON.parse(example)
+        let type = 'object';
+        example = JSON.parse(example);
 
         let object = {
           content: {
@@ -53,16 +60,16 @@ const makeSwagger = (elements) => {
               }
             }
           }
-        }
-        paths[pathOriginal][originalMethod]['requestBody'] = object
+        };
+        paths[pathOriginal][originalMethod]['requestBody'] = object;
       } else if (originalItem.request.body.formdata) {
         let proper = {};
         for (let i = 0; i < originalItem.request.body.formdata.length; i++) {
           const data = {
             type: 'string',
             example: originalItem.request.body.formdata[i].value
-          }
-          proper[originalItem.request.body.formdata[i].key] = data
+          };
+          proper[originalItem.request.body.formdata[i].key] = data;
         }
         let requestBody = {
           content: {
@@ -73,16 +80,16 @@ const makeSwagger = (elements) => {
               }
             }
           }
-        }
-        paths[pathOriginal][originalMethod]['requestBody'] = requestBody
+        };
+        paths[pathOriginal][originalMethod]['requestBody'] = requestBody;
       } else if (originalItem.request.body.urlencoded) {
         let proper = {};
         for (let i = 0; i < originalItem.request.body.urlencoded.length; i++) {
           const data = {
             type: 'string',
             example: originalItem.request.body.urlencoded[i].value
-          }
-          proper[originalItem.request.body.urlencoded[i].key] = data
+          };
+          proper[originalItem.request.body.urlencoded[i].key] = data;
         }
         let requestBody = {
           content: {
@@ -93,15 +100,15 @@ const makeSwagger = (elements) => {
               }
             }
           }
-        }
-        paths[pathOriginal][originalMethod]['requestBody'] = requestBody
+        };
+        paths[pathOriginal][originalMethod]['requestBody'] = requestBody;
       } else {
         console.log('Request.body not supported');
       }
     }
   } catch (error) {
     console.log(`Error request body:
-    ${JSON.stringify(error.message, null, 2)}`)
+    ${JSON.stringify(error.message, null, 2)}`);
   }
 
   try {
@@ -109,25 +116,25 @@ const makeSwagger = (elements) => {
       let object = {}
       switch (originalItem.request.auth.type) {
         case 'bearer':
-          components.securitySchemes['bearerAuth'] = bearer
+          components.securitySchemes['bearerAuth'] = bearer;
           object['bearerAuth'] = [];
           break;
         case 'apikey':
-          components.securitySchemes['apiKeyAuth'] = apiKeyAuth
+          components.securitySchemes['apiKeyAuth'] = apiKeyAuth;
           object['apiKeyAuth'] = [];
           break;
         case 'basic':
-          components.securitySchemes['basicAuth'] = basicAuth
+          components.securitySchemes['basicAuth'] = basicAuth;
           object['basicAuth'] = [];
           break;
         default:
           break;
       }
-      paths[pathOriginal][originalMethod]['security'] = [object]
+      paths[pathOriginal][originalMethod]['security'] = [object];
     }
   } catch (error) {
     console.log(`Error auth param:
-    ${JSON.stringify(error.message, null, 2)}`)
+    ${JSON.stringify(error.message, null, 2)}`);
 
   }
 
@@ -137,12 +144,11 @@ const makeSwagger = (elements) => {
         let query = {
           in: 'header',
           name: originalItem.request.header[i].key,
-          schema:
-          {
+          schema: {
             type: 'string',
             example: originalItem.request.header[i].value
           }
-        }
+        };
         parameters.push(query);
       }
     }
@@ -160,7 +166,7 @@ const makeSwagger = (elements) => {
             type: 'string',
             example: originalItem.request.url.query[i].key
           }
-        }
+        };
         parameters.push(query);
       }
     }
@@ -169,10 +175,10 @@ const makeSwagger = (elements) => {
   }
 
   if (parameters.length > 0) {
-    paths[pathOriginal][originalMethod]['parameters'] = parameters
+    paths[pathOriginal][originalMethod]['parameters'] = parameters;
   }
 
-  paths[pathOriginal][originalMethod]['tags'] = ['Default']
+  paths[pathOriginal][originalMethod]['tags'] = ['Default'];
 
   try {
     if (originalItem.response) {
@@ -185,8 +191,8 @@ const makeSwagger = (elements) => {
         paths[pathOriginal][originalMethod]['responses'][statusDefautl]['description'] = description;
         paths[pathOriginal][originalMethod]['responses'][statusDefautl]['content'] = {}
         paths[pathOriginal][originalMethod]['responses'][statusDefautl]['content']['application/json'] = {};
-        paths[pathOriginal][originalMethod]['responses'][statusDefautl]['content']['application/json']['schema'] = {}
-        paths[pathOriginal][originalMethod]['responses'][statusDefautl]['content']['application/json']['schema']['example'] = body
+        paths[pathOriginal][originalMethod]['responses'][statusDefautl]['content']['application/json']['schema'] = {};
+        paths[pathOriginal][originalMethod]['responses'][statusDefautl]['content']['application/json']['schema']['example'] = body;
       } else {
         for (let i = 0; i < originalItem.response.length; i++) {
           const responseItem = originalItem.response[i];
@@ -197,15 +203,15 @@ const makeSwagger = (elements) => {
           paths[pathOriginal][originalMethod]['responses'][responseItem.code]['description'] = description;
           paths[pathOriginal][originalMethod]['responses'][responseItem.code]['content'] = {}
           paths[pathOriginal][originalMethod]['responses'][responseItem.code]['content']['application/json'] = {};
-          paths[pathOriginal][originalMethod]['responses'][responseItem.code]['content']['application/json']['schema'] = {}
-          paths[pathOriginal][originalMethod]['responses'][responseItem.code]['content']['application/json']['schema']['example'] = body
+          paths[pathOriginal][originalMethod]['responses'][responseItem.code]['content']['application/json']['schema'] = {};
+          paths[pathOriginal][originalMethod]['responses'][responseItem.code]['content']['application/json']['schema']['example'] = body;
         }
       }
     }
   } catch (error) {
     console.log(`Error response: ${error.message}`);
   }
-}
+};
 
 module.exports.converter = async (input, output, options = {}) => {
   let postmanRaw;
@@ -258,7 +264,7 @@ module.exports.converter = async (input, output, options = {}) => {
       components
     };
 
-    let yamlStr = yaml.safeDump(data);
+    let yamlStr = yaml.safeDump(data);;
     fs.writeFileSync(output, yamlStr, 'utf8');
   } catch (error) {
     console.log(`General error:

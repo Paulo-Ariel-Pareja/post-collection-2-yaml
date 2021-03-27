@@ -1,38 +1,38 @@
 {
-  "name": "post-collection-to-yaml",
-  "version": "1.0.8",
-  "description": "converter postman collection v2.1 to swagger (openapi 3.0.0) yaml",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Paulo Ariel Pareja",
-  "license": "MIT",
-  "dependencies": {
-    "js-yaml": "^3.13.1"
-  },
-  "repository": {
-    "url": "https://github.com/Paulo-Ariel-Pareja/post-collection-2-yaml"
-  },
-  "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-plugin-import": "^2.6.0",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-react": "^7.1.0",
-    "eslint-plugin-security": "^1.4.0",
-    "eslint-watch": "^3.1.4",
-    "lint-staged": "^7.2.0"
-  },
-  "keywords": [
-    "postman",
-    "2.1.0",
-    "collection",
-    "swagger",
-    "yaml",
-    "openapi",
-    "3.0.0",
-    "converter"
-  ]
+    "name": "post-collection-to-yaml",
+    "version": "1.0.9",
+    "description": "converter postman collection v2.1 to swagger (openapi 3.0.0) yaml",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Paulo Ariel Pareja",
+    "license": "MIT",
+    "dependencies": {
+        "js-yaml": "^3.13.1"
+    },
+    "repository": {
+        "url": "https://github.com/Paulo-Ariel-Pareja/post-collection-2-yaml"
+    },
+    "devDependencies": {
+        "eslint": "^4.19.1",
+        "eslint-config-airbnb": "^15.0.1",
+        "eslint-config-airbnb-base": "^11.2.0",
+        "eslint-plugin-import": "^2.6.0",
+        "eslint-plugin-jsx-a11y": "^5.0.3",
+        "eslint-plugin-react": "^7.1.0",
+        "eslint-plugin-security": "^1.4.0",
+        "eslint-watch": "^3.1.4",
+        "lint-staged": "^7.2.0"
+    },
+    "keywords": [
+        "postman",
+        "2.1.0",
+        "collection",
+        "swagger",
+        "yaml",
+        "openapi",
+        "3.0.0",
+        "converter"
+    ]
 }
